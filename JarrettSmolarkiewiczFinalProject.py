@@ -4,6 +4,10 @@ Jarrett Smolarkiewicz
 Final Project
 GitHub Link: https://github.com/jarrettsmo/INF360VA_Final_HL7Parser_JarrettSmolarkiewicz
 
+Final Project YouTube Intructions
+Final Project Overview: https://www.youtube.com/watch?v=KubmdsOY8Vw
+Converting Midterm to Final Project OOP Requirement: https://www.youtube.com/watch?v=2kTpbzJjNFw
+
 FINAL GRADING RUBRIC:
 ---------------------------------------------------------
 20 points - Program executes with no errors.
@@ -63,7 +67,7 @@ import logging
 import sys
 # Imported logging file information
 logging.basicConfig(filename='JarrettSmolarkiewiczFinalProject_HL7_App_Logs.txt', level=logging.DEBUG, format=' %(asctime)s -  %(levelname)s -  %(message)s')
-logging.debug('Start of Program')
+# logging.debug('Start of Program')
 
 # Primary HL7 App functions stored within file called "JarrettSmolarkiewiczFinalProject_HL7_App_Functions.py", and imported here, then called within this app as "hl7_fn".
 # If "JarrettSmolarkiewiczFinalProject_HL7_App_Functions.py" is not found, the app will exit and inform the user why this happened, as well as storing it within the log file.
@@ -117,4 +121,4 @@ while True:
 
 # DISPLAY MESSAGE TO NOTIFY USER THEY HAVE EXITED THE HL7 APP AFTER OPTION "0" SELECTED IN MAIN MENU 
 print("You have exited the HL7 Program.")
-logging.debug('End of Program')
+# logging.debug('End of Program')
