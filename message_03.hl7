@@ -1,1 +1,25 @@
-MSH|^~\&|LABCORP|LABCORP^34D0655059^CLIA|KSDOH|KS|202010180800|SRKS0001|ORU^R01|20201018112921514404|P|2.3.1||||||||PID|1|replaced 1|||Mack300^Reynolds644||19710809|M|||408 Heaney Course^^Albany^MO^64402-0178|US|^PRN^PH^^1^357^3924453|||||||||||||||||NK1|3|May125^Glover433|ASC^Associate|114 Watsica Fort^^Albuquerque^NM^87107-1872|PRN^PH^^1^678^4902140||||||||||||||||||||||||||||||||||ORC|||||||||||||||||||||Hillside Medical Office|855 N Hillside^^WICHITA^KS^67214|^^^^^316^6851381|855 N Hillside^^WICHITA^KS^67214OBR|1||28953132230|94564-2^SARS coronavirus 2 Ab.IgM^LN^164034^SARS-CoV-2 Antibody, IgM^L|||202010151550|||||||202010152006|Ser/Plas^^Ser/Plas|1992963763^CHARLES SMOTHERS^BONNIE^E^^^MD^^^^^^NPI|^^^^^316^6851381||||||||F||||||||||||||||||||OBX|1|CE|94564-2^SARS coronavirus 2 Ab.IgM^LN^164035^SARS-CoV-2 Antibody, IgM^L||260385009^Negative^SCT^N^Negative^L||Negative||||F|||20201017184923|34D0655059^LabCorp Burlington^CLIA||^IA|||||||1447 York Court^^Burlington^NC^27215NTE|1|L|Negative|NTE|2|L|This sample does not contain detectable SARS-CoV-2 IgM antibodies.|NTE|3|L|This negative result does not rule out SARS-CoV-2 infection.|NTE|4|L|Correlation with epidemiologic risk factors and other clinical and|NTE|5|L|laboratory findings is recommended. Serologic results should not be|NTE|6|L|used as the sole basis to diagnose or exclude recent SARS-CoV-2|NTE|7|L|infection.|OBR|2||28953132230|94563-4^SARS coronavirus 2 Ab.IgG^LN^164055^SARS-CoV-2 Antibody, IgG^L|||202010151550|||||||202010152006|Ser/Plas^^Ser/Plas|1992963763^CHARLES SMOTHERS^BONNIE^E^^^MD^^^^^^NPI|^^^^^316^6851381||||||||F||||||||||||||||||||OBX|1|CE|94563-4^SARS coronavirus 2 Ab.IgG^LN^164056^Euroimmun SARS-CoV-2 Ab, IgG^L||42425007^Equivocal^SCT^EQR^Equivocal^L||Negative||||F|||20201017184500|34D0655059^LabCorp Burlington^CLIA||^IA|||||||1447 York Court^^Burlington^NC^27215NTE|1|L|Equivocal|NTE|2|L|Equivocal results may be consistent with early development of|NTE|3|L|antibodies or waning antibodies after infection with SARS-CoV-2.|NTE|4|L|Repeat testing at a later date is recommended. Correlation with|NTE|5|L|epidemiologic risk factors and other clinical and laboratory|NTE|6|L|findings is recommended. Serologic results should not be used as|NTE|7|L|the sole basis to diagnose or exclude recent SARS-CoV-2 infection.|NTE|8|L|False positive results infrequently occur due to prior infection|NTE|9|L|with other human Coronaviruses.|NTE|10|L|This assay was performed using the Euroimmun SARS-CoV-2 IgG assay.|
+MSH|^~\&|LABCORP|LABCORP^34D0655059^CLIA|KSDOH|KS|202010180800|SRKS0001|ORU^R01|20201018112921514404|P|2.3.1||||||||
+PID|1|replaced 1|||Mack300^Reynolds644||19710809|M|||408 Heaney Course^^Albany^MO^64402-0178|US|^PRN^PH^^1^357^3924453|||||||||||||||||
+NK1|3|May125^Glover433|ASC^Associate|114 Watsica Fort^^Albuquerque^NM^87107-1872|PRN^PH^^1^678^4902140||||||||||||||||||||||||||||||||||
+ORC|||||||||||||||||||||Hillside Medical Office|855 N Hillside^^WICHITA^KS^67214|^^^^^316^6851381|855 N Hillside^^WICHITA^KS^67214
+OBR|1||28953132230|94564-2^SARS coronavirus 2 Ab.IgM^LN^164034^SARS-CoV-2 Antibody, IgM^L|||202010151550|||||||202010152006|Ser/Plas^^Ser/Plas|1992963763^CHARLES SMOTHERS^BONNIE^E^^^MD^^^^^^NPI|^^^^^316^6851381||||||||F||||||||||||||||||||
+OBX|1|CE|94564-2^SARS coronavirus 2 Ab.IgM^LN^164035^SARS-CoV-2 Antibody, IgM^L||260385009^Negative^SCT^N^Negative^L||Negative||||F|||20201017184923|34D0655059^LabCorp Burlington^CLIA||^IA|||||||1447 York Court^^Burlington^NC^27215
+NTE|1|L|Negative|
+NTE|2|L|This sample does not contain detectable SARS-CoV-2 IgM antibodies.|
+NTE|3|L|This negative result does not rule out SARS-CoV-2 infection.|
+NTE|4|L|Correlation with epidemiologic risk factors and other clinical and|
+NTE|5|L|laboratory findings is recommended. Serologic results should not be|
+NTE|6|L|used as the sole basis to diagnose or exclude recent SARS-CoV-2|
+NTE|7|L|infection.|
+OBR|2||28953132230|94563-4^SARS coronavirus 2 Ab.IgG^LN^164055^SARS-CoV-2 Antibody, IgG^L|||202010151550|||||||202010152006|Ser/Plas^^Ser/Plas|1992963763^CHARLES SMOTHERS^BONNIE^E^^^MD^^^^^^NPI|^^^^^316^6851381||||||||F||||||||||||||||||||
+OBX|1|CE|94563-4^SARS coronavirus 2 Ab.IgG^LN^164056^Euroimmun SARS-CoV-2 Ab, IgG^L||42425007^Equivocal^SCT^EQR^Equivocal^L||Negative||||F|||20201017184500|34D0655059^LabCorp Burlington^CLIA||^IA|||||||1447 York Court^^Burlington^NC^27215
+NTE|1|L|Equivocal|
+NTE|2|L|Equivocal results may be consistent with early development of|
+NTE|3|L|antibodies or waning antibodies after infection with SARS-CoV-2.|
+NTE|4|L|Repeat testing at a later date is recommended. Correlation with|
+NTE|5|L|epidemiologic risk factors and other clinical and laboratory|
+NTE|6|L|findings is recommended. Serologic results should not be used as|
+NTE|7|L|the sole basis to diagnose or exclude recent SARS-CoV-2 infection.|
+NTE|8|L|False positive results infrequently occur due to prior infection|
+NTE|9|L|with other human Coronaviruses.|
+NTE|10|L|This assay was performed using the Euroimmun SARS-CoV-2 IgG assay.|

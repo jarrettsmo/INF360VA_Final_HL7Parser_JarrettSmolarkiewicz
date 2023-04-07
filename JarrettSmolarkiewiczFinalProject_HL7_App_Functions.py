@@ -2,7 +2,6 @@
 """
 This file holds several functions for the INF 360 VA Programming with Python Final Project (HL7 Parser App) by Jarrett Smolarkiewicz.
 """ 
-
 # The "files_menu()" function:
 #     1. Creates a new list assigned to the variable "file_menu" containing each menu option as an item in the list.
 #     2. Prints the entire "file_menu" list, with each menu option on a new line.
@@ -268,7 +267,7 @@ def component(hl7_split, header, field, component):
 def menuLoop(hl7):
     
     # This part splits the entire HL7 v2.5.1 message assigned to the variable "hl7" into segments that are separated by the "\n" character. 
-    hl7_split = hl7.split("\n") 
+    hl7_split = hl7.split("\n")
 
     while True:
         try:

@@ -66,16 +66,19 @@ Final Version
 import logging
 import sys
 # Imported logging file information
-logging.basicConfig(filename='JarrettSmolarkiewiczFinalProject_HL7_App_Logs.txt', level=logging.DEBUG, format=' %(asctime)s -  %(levelname)s -  %(message)s')
-# logging.debug('Start of Program')
+logging.basicConfig(filename='JarrettSmolarkiewiczFinalProject_HL7_App_Logs.txt', 
+                    level=logging.DEBUG, 
+                    format=' %(asctime)s -  %(levelname)s -  %(message)s')
+logging.debug('Start of Program')
 
 # Primary HL7 App functions stored within file called "JarrettSmolarkiewiczFinalProject_HL7_App_Functions.py", and imported here, then called within this app as "hl7_fn".
 # If "JarrettSmolarkiewiczFinalProject_HL7_App_Functions.py" is not found, the app will exit and inform the user why this happened, as well as storing it within the log file.
 try: 
     import JarrettSmolarkiewiczFinalProject_HL7_App_Functions as hl7_fn
 except:
-    logging.critical("Missing HL7_App_Functions.py!")
-    print("Missing HL7_Files_Menu_Function.py! Exiting the application...")
+    logging.critical("Missing JarrettSmolarkiewiczFinalProject_HL7_App_Functions.py!")
+    print("Missing JarrettSmolarkiewiczFinalProject_HL7_App_Functions.py! Exiting the application...")
+    logging.debug('Ended Program due to Critical Error')
     sys.exit()
 
 # Importing Path from the Path Library (pathlib)
@@ -84,9 +87,23 @@ from pathlib import Path
 def readHL7(p):
     fileHL7 = Path(p).read_text()
     return fileHL7
-        
-################################### Beginning of the HL7 Application... ###################################
 
+# Creates Message classes to describe the HL7 file object selected in the initial app menu.
+class Message:
+       
+    # Initializer / Instance Attributes
+    def __init__(self, fileName, segmentQty, labQty):
+        self.fileName = fileName
+        self.segmentQty = segmentQty
+        self.labQty = labQty
+    
+    # Describes the Message object based on the HL7 file selected by the user.
+    def msgInfo(self):
+        print("\n You are parsing {}.\n This message contains {} segments.\n {} of those are labs.\n".format(self.fileName, 
+                                                                                                             self.segmentQty, 
+                                                                                                             self.labQty))       
+
+####################################### Beginning of the HL7 Application... #######################################
 while True:
     try:
         # DISPLAY HL7 MESSAGE SELECT MENU
@@ -96,26 +113,36 @@ while True:
         # SELECT message_01.hl7 FILE AND ASSIGN TO LOCAL VARIABLE hl7, THEN RUN THROUGH hl7_fn.menuLoop(hl7) FUNCTION TO PARSE THE MESSAGE CONTENTS FOR USER 
         if int(option_File) == 1:
             hl7 = readHL7("message_01.hl7")
+            msgSelect = Message("message_01.hl7", len(hl7.split("\n")), hl7.count("OBX"))
+            msgSelect.msgInfo()
             hl7_fn.menuLoop(hl7)
             continue
         # SELECT message_02.hl7 FILE AND ASSIGN TO LOCAL VARIABLE hl7, THEN RUN THROUGH hl7_fn.menuLoop(hl7) FUNCTION TO PARSE THE MESSAGE CONTENTS FOR USER 
         elif int(option_File) == 2:
             hl7 = readHL7("message_02.hl7")
+            msgSelect = Message("message_02.hl7", len(hl7.split("\n")), hl7.count("OBX"))
+            msgSelect.msgInfo()
             hl7_fn.menuLoop(hl7)
             continue
         # SELECT message_03.hl7 FILE AND ASSIGN TO LOCAL VARIABLE hl7, THEN RUN THROUGH hl7_fn.menuLoop(hl7) FUNCTION TO PARSE THE MESSAGE CONTENTS FOR USER 
         elif int(option_File) == 3:
             hl7 = readHL7("message_03.hl7")
+            msgSelect = Message("message_03.hl7", len(hl7.split("\n")), hl7.count("OBX"))
+            msgSelect.msgInfo()
             hl7_fn.menuLoop(hl7)
             continue
         # SELECT message_04.hl7 FILE AND ASSIGN TO LOCAL VARIABLE hl7, THEN RUN THROUGH hl7_fn.menuLoop(hl7) FUNCTION TO PARSE THE MESSAGE CONTENTS FOR USER 
         elif int(option_File) == 4:
             hl7 = readHL7("message_04.hl7")
+            msgSelect = Message("message_04.hl7", len(hl7.split("\n")), hl7.count("OBX"))
+            msgSelect.msgInfo()
             hl7_fn.menuLoop(hl7)
             continue
         # SELECT message_05.hl7 FILE AND ASSIGN TO LOCAL VARIABLE hl7, THEN RUN THROUGH hl7_fn.menuLoop(hl7) FUNCTION TO PARSE THE MESSAGE CONTENTS FOR USER 
         elif int(option_File) == 5:
             hl7 = readHL7("message_05.hl7")
+            msgSelect = Message("message_05.hl7", len(hl7.split("\n")), hl7.count("OBX"))
+            msgSelect.msgInfo()
             hl7_fn.menuLoop(hl7)
             continue
         elif int(option_File) == 0:
@@ -131,4 +158,4 @@ while True:
 
 # DISPLAY MESSAGE TO NOTIFY USER THEY HAVE EXITED THE HL7 APP AFTER OPTION "0" SELECTED IN MAIN MENU 
 print("You have exited the HL7 Program.")
-# logging.debug('End of Program')
+logging.debug('End of Program')

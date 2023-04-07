@@ -1,2 +1,18 @@
  2023-03-30 00:59:27,609 -  DEBUG -  Start of Program
  2023-03-30 00:59:33,043 -  DEBUG -  End of Program
+ 2023-04-07 12:33:31,179 -  DEBUG -  Start of Program
+ 2023-04-07 12:33:56,229 -  DEBUG -  Start of Program
+ 2023-04-07 12:35:03,953 -  DEBUG -  End of Program
+ 2023-04-07 12:35:38,322 -  DEBUG -  Start of Program
+ 2023-04-07 12:35:38,322 -  CRITICAL -  Missing JarrettSmolarkiewiczFinalProject_HL7_App_Functions.py!
+ 2023-04-07 12:38:24,120 -  DEBUG -  Start of Program
+ 2023-04-07 12:38:24,121 -  CRITICAL -  Missing JarrettSmolarkiewiczFinalProject_HL7_App_Functions.py!
+ 2023-04-07 12:38:24,121 -  DEBUG -  End of Program
+ 2023-04-07 12:53:52,201 -  DEBUG -  Start of Program
+ 2023-04-07 12:54:04,522 -  DEBUG -  Start of Program
+ 2023-04-07 12:54:09,671 -  DEBUG -  End of Program
+ 2023-04-07 12:54:42,464 -  DEBUG -  Start of Program
+ 2023-04-07 12:54:42,464 -  CRITICAL -  Missing JarrettSmolarkiewiczFinalProject_HL7_App_Functions.py!
+ 2023-04-07 12:54:42,464 -  DEBUG -  Ended Program due to Critical Error
+ 2023-04-07 12:54:59,104 -  DEBUG -  Start of Program
+ 2023-04-07 12:55:05,289 -  DEBUG -  End of Program
