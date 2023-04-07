@@ -90,7 +90,7 @@ def lab_order(hl7_split):
         "\n" + "LOINC: ".rjust(9) + str(component(hl7_split, "OBR", 3, 1)).rjust(35) + 
         "\n" + "Description of Lab: ".rjust(22) + str(component(hl7_split, "OBR", 4, 5).lower().title()).rjust(19) + 
         "\n" + "Date/Time of Lab: ".rjust(20) + str(field(hl7_split, "OBR", 7)[4:6]).rjust(4) + "-" + str(field(hl7_split, "OBR", 7)[6:8]) + "-" + str(field(hl7_split, "OBR", 7)[0:4]) + " " + str(field(hl7_split, "OBR", 7)[8:10]) + ":" + str(field(hl7_split, "OBR", 7)[10:12]) + " UTC" + str(field(hl7_split, "OBR", 7)[12:]) + "\n"]
-    print("\n" + "LAB ORDER INFORMATION MENU")
+    print("\n" + "LAB ORDER INFORMATION")
     print(*lab_order_info, sep="\n")
 
 # MAIN MENU OPTION 5: Lab Result Information
@@ -99,10 +99,9 @@ def lab_order(hl7_split):
 #     2. Prints the entire "lab_result_info" content as a formatted string that is much easier to read and understand.
 def lab_results(hl7_split, hl7):
     lab_result_info = [
-        "\n" + "Initial Lab Result Segment (OBX): " + "\n" + str(segment(hl7_split, "OBX")) + "\n" +
-        # "\n" + "Total Number of Lab Result Segments in Message: " + "\n"]
-        "\n" + "Total Number of Lab Result Segments in Message: " +  str(hl7.count("OBX")) + "\n"]
-    print("LAB RESULT INFORMATION MENU")
+        "Total Number of Lab Result Segments in Message: " +  str(hl7.count("OBX")) + "\n"]
+    print("\n" + "LAB RESULT INFORMATION")
+    allSegments(hl7_split, "OBX")
     print(*lab_result_info, sep="\n")
 
 # MAIN MENU OPTION 6: Specimen Information
@@ -118,7 +117,7 @@ def specimen(hl7_split):
         "\n" + "SNOMED: ".rjust(10) + str(component(hl7_split, "SPM", 4, 1)).rjust(23) +
         "\n" + "Type: ".rjust(8) + str(component(hl7_split, "SPM", 4, 2)).rjust(41) + 
         "\n" + "Data/Time Collected: ".rjust(23) + str(field(hl7_split, "SPM", 17)[4:6]).rjust(3) + "-" + str(field(hl7_split, "SPM", 17)[6:8]) + "-" + str(field(hl7_split, "SPM", 17)[0:4]) + " " + str(field(hl7_split, "SPM", 17)[8:10]) + ":" + str(field(hl7_split, "SPM", 17)[10:12]) + " UTC" + str(field(hl7_split, "SPM", 17)[12:]) + "\n"]
-    print("SPECIMEN INFORMATION MENU")
+    print("\n" + "SPECIMEN INFORMATION")
     print(*specimen_info, sep="\n")
 
 # MAIN MENU OPTION 0: Exit (There is no pre-defined function for this option. The code is within a "while" statement later in the program.)
@@ -154,6 +153,39 @@ def segment(hl7_split, header):
             newdict[key].append(value)
 
     return header + newdict[header][0]
+
+"""
+FUNCTION TO PRINT ALL OCCURENCES OF SPECIFIED SEGMENT TYPE WITHIN THE HL7 MESSAGE (Determines number of OBX Segments - Lab Results)
+The "allSegments(hl7_split, header)" function:
+    1. Takes two arguments:
+            - "hl7_split" is the original HL7 Message, split into segments, using the "\n" character as a delimiter.
+            - "header" is a three character string that corresponds to the three character header of the segment(s) being used from the HL7 message.
+    2. Creates a new dictionary and assigns it to the variable "newdict".
+    3. Iterates through the HL7 Message segment(s) identified by the "hl7_split" variable using a "for" loop, checking for the "segment" variable.
+    4. Assigns the "key" for "newdict" to the first three characters of the selected HL7 message segment(s), which is the segment header.
+    5. Assigns the "value" for "newdict" to the characters from position three through the rest of the string in the selected HL7 message segment(s).
+    6. Uses a conditional "if" statement to ensure all occurances of a segment header (key), and the segment containing the header(s) (value)
+       are included in a new list called "newdict[key]", by checking if they are in the list as the function iterates through the HL7 message.
+       This part of the function also appends one or multiple segments to the newly created list.
+    7. Iterates through the (occurences) of the specified segment within the entire HL7 message, as identified in the range of the length of the quantity of the of the specified segment (header).
+    8. Prints all occurences of the specified segment (value) paired with the specified segment header (key) as a string, based on the value of the (header) argument passed into the function.
+    9. This function's arguments are designed to include the entire "segment" when returning the result. The "header" is re-attached when returning the result.
+"""
+def allSegments(hl7_split, header):
+    newdict = {}
+    for segment in hl7_split:
+        key = segment[0:3]
+        value = segment[3:]
+
+        if key not in newdict:
+            newdict[key] = []
+            newdict[key].append(value)
+            
+        else:
+            newdict[key].append(value)
+            
+    for occurences in range(len(newdict[header])):
+        print(header + newdict[header][occurences] + "\n")
 
 """
 FUNCTION TO RETURN DATA WITHIN A SPECIFIED FIELD WITHIN SPECIFIED HL7 SEGMENT(S)
@@ -246,7 +278,7 @@ def menuLoop(hl7):
                         
             # DISPLAY ENTIRE HL7 MESSAGE
             if int(option_Menu) == 1:
-                print("\n" + "Entire HL7 Message: " + "\n" + hl7)
+                print("\n" + "ENTIRE HL7 MESSAGE" + "\n" + hl7)
                 continue
             # DISPLAY RAW MESSAGE HEADER SEGMENT (MSH) FOLLOWED BY NEATLY PRESENTED RELEVANT INFORMATION
             elif int(option_Menu) == 2:
