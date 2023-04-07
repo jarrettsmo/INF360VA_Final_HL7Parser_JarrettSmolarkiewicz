@@ -11,6 +11,8 @@ def files_menu():
         "[1] message_01.hl7",
         "[2] message_02.hl7",
         "[3] message_03.hl7",
+        "[4] message_04.hl7",
+        "[5] message_05.hl7",
         "[0] Exit Program"]
     print("HL7 MESSAGE SELECT MENU")
     print(*file_select, sep="\n")
@@ -95,11 +97,11 @@ def lab_order(hl7_split):
 # The "lab_results()" function:
 #     1. Creates a new list assigned to the variable "lab_result_info" containing a string of the initial Observation Result (OBX) segment, as well as how many total OBX segments are in the message.
 #     2. Prints the entire "lab_result_info" content as a formatted string that is much easier to read and understand.
-def lab_results(hl7_split):
+def lab_results(hl7_split, hl7):
     lab_result_info = [
         "\n" + "Initial Lab Result Segment (OBX): " + "\n" + str(segment(hl7_split, "OBX")) + "\n" +
-        "\n" + "Total Number of Lab Result Segments in Message: " + "\n"]
-        # "\n" + "Total Number of Lab Result Segments in Message: " +  str(hl7.count("OBX")) + "\n"]
+        # "\n" + "Total Number of Lab Result Segments in Message: " + "\n"]
+        "\n" + "Total Number of Lab Result Segments in Message: " +  str(hl7.count("OBX")) + "\n"]
     print("LAB RESULT INFORMATION MENU")
     print(*lab_result_info, sep="\n")
 
@@ -260,7 +262,7 @@ def menuLoop(hl7):
                 continue
             elif int(option_Menu) == 5:
                 # DISPLAY ALL RAW LAB RESULT (OBX) SEGMENTS IN MESSAGE FOLLOWED BY NEATLY PRESENTED RELEVANT LAB RESULT INFORMATION FOR EACH SEGMENT
-                lab_results(hl7_split)
+                lab_results(hl7_split, hl7)
                 continue
             elif int(option_Menu) == 6:
                 # DISPLAY RAW SPECIMEN SEGMENT (SPM) FOLLOWED BY NEATLY PRESENTED RELEVANT SPECIMEN INFORMATION

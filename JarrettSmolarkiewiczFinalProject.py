@@ -91,7 +91,7 @@ while True:
     try:
         # DISPLAY HL7 MESSAGE SELECT MENU
         hl7_fn.files_menu()
-        option_File = input("Enter a number between 0 - 2 for the HL7 message file you would like to view: ")
+        option_File = input("Enter a number between 0 - 5 for the HL7 message file you would like to view: ")
                     
         # SELECT message_01.hl7 FILE AND ASSIGN TO LOCAL VARIABLE hl7, THEN RUN THROUGH hl7_fn.menuLoop(hl7) FUNCTION TO PARSE THE MESSAGE CONTENTS FOR USER 
         if int(option_File) == 1:
@@ -108,15 +108,25 @@ while True:
             hl7 = readHL7("message_03.hl7")
             hl7_fn.menuLoop(hl7)
             continue
+        # SELECT message_04.hl7 FILE AND ASSIGN TO LOCAL VARIABLE hl7, THEN RUN THROUGH hl7_fn.menuLoop(hl7) FUNCTION TO PARSE THE MESSAGE CONTENTS FOR USER 
+        elif int(option_File) == 4:
+            hl7 = readHL7("message_04.hl7")
+            hl7_fn.menuLoop(hl7)
+            continue
+        # SELECT message_05.hl7 FILE AND ASSIGN TO LOCAL VARIABLE hl7, THEN RUN THROUGH hl7_fn.menuLoop(hl7) FUNCTION TO PARSE THE MESSAGE CONTENTS FOR USER 
+        elif int(option_File) == 5:
+            hl7 = readHL7("message_05.hl7")
+            hl7_fn.menuLoop(hl7)
+            continue
         elif int(option_File) == 0:
             # DISPLAY MESSAGE TO NOTIFY USER THEY HAVE EXITED THE HL7 APP AFTER OPTION "0" SELECTED IN MAIN MENU 
             break             
         else:
             # DISPLAY MAIN MENU AFTER INVALID NUMBER ENTERED
-            print("\n" + "Invalid option! You must enter a number between 0 and 2..." + "\n")
+            print("\n" + "Invalid option! You must enter a number between 0 and 5..." + "\n")
             continue
     except:
-        print("\n" + "Invalid option! You must enter a number between 0 and 2..." + "\n")
+        print("\n" + "Invalid option! You must enter a number between 0 and 5..." + "\n")
         continue
 
 # DISPLAY MESSAGE TO NOTIFY USER THEY HAVE EXITED THE HL7 APP AFTER OPTION "0" SELECTED IN MAIN MENU 
